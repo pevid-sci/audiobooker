@@ -63,13 +63,12 @@ if uploaded_file:
     with open("temp_book.epub", "wb") as f:
         f.write(uploaded_file.getbuffer())
     
-    # O bloco TRY começa aqui
     try:
         book = epub.read_epub("temp_book.epub")
         chapters = get_chapters(book)
         st.success(f"Found {len(chapters)} sections.")
 
-        # --- Bulk Actions Section (Dentro do Try) ---
+        # --- Bulk Actions Section ---
         st.divider()
         st.subheader("Bulk Actions")
         
@@ -105,8 +104,8 @@ if uploaded_file:
         st.error(f"Error processing EPUB: {e}")
     
     finally:
-        # Garante que o arquivo temporário seja deletado, dando erro ou não
         if os.path.exists("temp_book.epub"):
             os.remove("temp_book.epub")
 else:
+
     st.info("Please upload an EPUB file to begin.")

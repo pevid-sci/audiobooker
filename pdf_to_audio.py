@@ -4,7 +4,7 @@ from gtts import gTTS
 import tempfile
 import os
 
-st.set_page_config(page_title="Article to Audio", page_icon="📖")
+st.set_page_config(page_title="PDF to Audio", page_icon="📖")
 
 def extract_text_from_pdf(pdf_file):
     try:
@@ -20,8 +20,8 @@ def extract_text_from_pdf(pdf_file):
         return ""
 
 def main():
-    st.title("🎧 Article to Audio")
-    st.markdown("Convert research papers into audiobooks.")
+    st.title("🎧 PDF to Audio")
+    st.markdown("Convert PDFs into audiobooks.")
 
     language_option = st.selectbox(
         "Select Language",
@@ -73,4 +73,5 @@ def main():
             st.error("Could not read text from this PDF.")
 
 if __name__ == "__main__":
+
     main()

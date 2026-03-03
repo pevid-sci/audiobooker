@@ -1,4 +1,6 @@
 streamlit
 ebooklib
 beautifulsoup4
+pypdf
+gTTS
 edge-tts
